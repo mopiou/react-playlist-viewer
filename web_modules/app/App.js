@@ -21,27 +21,32 @@ let kindArray = Object.keys(kinds)
 class App extends Component {
 
   getItem(item,index){
+    console.log('getItem');
     return (<Item key={index} name={item.name}/>) ;
   }
+
+  /*{
+    artists &&
+    artists.map((artist, index) => {
+      return this.getItem(artist,index)
+    })
+  }
+
+  {
+    kinds &&
+    kindArray.map((kindKey, index) => {
+      //console.log(kinds[kindKey]);
+      return this.getItem(kinds[kindKey],index)
+    })
+  }*/
 
   render() {
     return (
       <div>
-      /*{
-        artists &&
-        artists.map((artist, index) => {
-          return this.getItem(artist,index)
-        })
-      }*/
-      <List items={artists} />
-
-      {
-        kinds &&
-        kindArray.map((kindKey, index) => {
-          //console.log(kinds[kindKey]);
-          return this.getItem(kinds[kindKey],index)
-        })
-      }
+        {
+          console.log('test');
+         return (<List items={artists} />);
+        }
       </div>
 
     );
