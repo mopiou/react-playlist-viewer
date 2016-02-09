@@ -15,7 +15,7 @@ export default class List extends Component {
     static defaultProps = {
         title: "",
         items: [],
-        onChange:()=>{},
+        onChange:null,
         autoFilter:true,
     };
 
@@ -26,7 +26,7 @@ export default class List extends Component {
     onChangeHandler = (value) => {
       console.log(' List : onChangeHandler');
       this.setState({inputValue: value})
-      this.props.onChange(value);
+      //this.props.onChange(value);
     };
     filterName = (item) => {
       return item.name && item.name.toLowerCase().search(this.state.inputValue.toLowerCase())!=-1 ;
@@ -43,21 +43,18 @@ export default class List extends Component {
 
 
       const onChangeHandler = (onChange)
-        ? debounce(onChange,500)
+        ? debounce(onChange,3500)
         : this.onChangeHandler ;
-
-
 
       return (
         <div className="list">
             {
-                // onChange || onChangeHandler
-                <Input placeholder={title} onChange={onChange || this.onChangeHandler}/>
+              <Input placeholder={title} onChange={onChange || onChangeHandler}/>
             }
             {
               items &&
               items.map((item, index) => {
-
+                console.log((!autoFilter || autoFilter && this.filterName(item)) );
                 return (
                     //item.name && item.name.toLowerCase().search(this.state.inputValue.toLowerCase())!=-1 &&
                     (!autoFilter || autoFilter && this.filterName(item)) &&
@@ -66,6 +63,5 @@ export default class List extends Component {
               })
             }
         </div>)
-
     }
 }

@@ -45,7 +45,7 @@ export default class App extends Component {
     console.log('monRender');
     return (
       <div>
-        <List title="Artist" onChange={this.onChangeHandler} items={this.state.artists} />
+        <List title="Artist" onChange={this.onChangeHandler} items={this.state.artists} autoFilter={false} />
         <List title="Kind" items={kindsArray} />
       </div>
     )
