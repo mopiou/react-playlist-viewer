@@ -45,6 +45,7 @@
     }
   },
   "dependencies": {
+    "lodash.debounce": "^4.0.1",
     "react": "^0.14.4",
     "react-dom": "^0.14.4"
   }
