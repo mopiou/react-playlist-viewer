@@ -10,4 +10,4 @@ console.log(items);
         return (<Item key={index} name={item.name}/>) ;
       })
 }
-export default List
+export default List ;
