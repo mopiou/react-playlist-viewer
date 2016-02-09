@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React, {Component} from "react";
 
 import Item from "Item";
@@ -39,17 +40,51 @@ class App extends Component {
       return this.getItem(kinds[kindKey],index)
     })
   }*/
+||||||| merged common ancestors
+import React, { Component } from 'react';
+=======
+import React, { Component } from 'react';
+import List from "List";
+
+const artists = [
+  {name:"Bob Marley"},
+  {name:"Bob Dylan"},
+  {name:"Odezenne"},
+  {name:"Kavinsky"}
+]
+
+const kinds = {
+  rap: {name:"Rap"},
+  rock: {name:"Rock"},
+  electro: {name:"Electro"}
+}
+
+const kindsArray = Object.keys(kinds).map((k) => { return kinds[k] });
+>>>>>>> kimak/step3
 
   render() {
     return (
       <div>
+<<<<<<< HEAD
         {
           console.log('test');
          return (<List items={artists} />);
         }
+||||||| merged common ancestors
+        Hello React !
+=======
+        <List items={artists} />
+        <List items={kindsArray} />
+>>>>>>> kimak/step3
       </div>
+<<<<<<< HEAD
 
     );
+||||||| merged common ancestors
+    );
+=======
+    )
+>>>>>>> kimak/step3
   }
 }
 
