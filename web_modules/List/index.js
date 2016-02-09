@@ -1,6 +1,6 @@
 import React, {PropTypes, Component } from 'react';
 import debounce from 'lodash.debounce';
-
+import styles from "./index.css";
 import Item from "Item";
 import Input from "Input";
 
@@ -48,7 +48,7 @@ export default class List extends Component {
       let selectedIndex = 0;
 
       return (
-        <div className="list">
+        <div className={styles.list}>
             {
                 <Input placeholder={title} onChange={onChangeHandler}/>
             }
